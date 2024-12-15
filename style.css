@@ -125,3 +125,30 @@ label {
     color: #0948B4;
     text-decoration: none;
 }
+
+/* Sign-Up checkbox */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox input {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: #FEFEFE;
+    border: 1.25px solid #8E8E93;
+}
+
+.checkbox span {
+    font-size: 12px;
+    line-height: 14.4px;
+}
+
+.checkbox a {
+    color: #0948B4;
+    font-size: 12px;
+    line-height: 14.4px;
+    text-decoration: none;
+}
