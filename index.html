@@ -5,29 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz-Application</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <figure id="">
-        <img src="Image/Background_Complete.png" alt="Background_Complete">
-        <img src="Image/Speech_Bubble.png" alt="Speech_Bubble">
-        <img src="Image/Character.png" alt="Character">
-    </figure>
-    <form action="">
-        <h1>Login</h1>
-        <p>Please enter your details below</p>
-        <div>
-            <label for="email">Email Id</label><br><br>
-            <input type="email" name="email-id" id="email-id" placeholder="xyz15@gmail.com" required>
+    <img src="Image/logo.png" class="logo" alt="Logo">
+    <form action="" class="form-details">
+        <div class="login">
+            <h1>Login</h1>
+            <p>Please enter your details below.</p>
         </div>
-        <div>
-            <label for="password">Password</label><br><br>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-        </div>
+        <div class="form-container">
+            <div class="form-inputs">
+                <label for="email">Email Id<span>*</span></label>
+                <input type="email" name="email-id" id="email-id" placeholder="xyz15@gmail.com" required>
+            </div>
+            <div class="form-inputs">
+                <label for="password">Password<span>*</span></label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
 
-        <input type="button" value="Login">
+            <input type="button" value="Login" class="button">
+            <div class="signup">
+                <img src="Image/devicon_google.png" alt="Google-Image">
+                <a href="">Sign up with google</a>
+            </div>
+        </div>
+        <span>Don't have an account?</span><a href="">Sign up?</a>
     </form>
-
 </body>
 
 </html>
