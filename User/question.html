@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-Pages</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav id="main-navbar">
+        <a href="startquiz.html"><img src="/Image/Vector.png" alt="Vector" id="logo"></a>
+        <div class="navbar-content">
+            <ul>
+                <li>Welcome</li>
+                <li>Vallabh</li>
+            </ul>
+            <img  onclick="popUp()"src="/Image/avtar.jpg" alt="Avtar" id="user-avtar">
+        </div>
+    </nav>
+
+    <section class="quiz-question">
+        <div class="box-quiz">
+            <div class="box-quiz-content">
+                <div class="quiz-header">
+                    <h1 id="quiz-progress"></h1>
+                    <div class="quiz-progress-bar">
+                        <div id="quiz-progress-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="quiz-question-container">
+                    <h4 id="quiz-question"></h4>
+                </div>
+            </div>
+            <div class="answer">
+                <ol id="option-list"></ol>
+            </div>
+        </div>
+
+        <div id="button">
+            <button class="submit-button" id="previous" onclick="previousQuestion()">Previous</button>
+            <button class="submit-button" id="next" onclick="nextQuestion()">Next→</button>
+        </div>
+
+        <div id="logout-container">
+            <p id="my-name">Hii, Baijnath</p>
+            <p id="my-email">abc1200@gmail.com</p>
+            <button id="logout-button" onclick="logout()">Logout</button>
+          </div>
+    </section>
+
+    <script src="../script.js"></script>
+    <script>startQuiz()</script>
+    <script>
+        // window.onload = function(){
+        //     if(localStorage.getItem("loggedInEmail")){
+        //         window.location.href = "index.html"
+        //     }
+        //     // startQuiz();
+        //     checkUserData();
+        // }
+    </script>
+
+</body>
+
+</html>

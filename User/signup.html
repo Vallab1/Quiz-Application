@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up page</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
 <body>
@@ -18,6 +19,7 @@
                 <h1>SignUp</h1>
                 <p>Please enter your details below.</p>
             </div>
+            
             <div class="form-group">
                 <label for="fname">Full Name<span>*</span></label>
                 <input type="text" name="fname" id="full-name" placeholder="Full Name" required>
@@ -25,28 +27,36 @@
 
             <div class="form-group">
                 <label for="email">Email Id<span>*</span></label>
-                <input type="email" name="email-id" id="email-id" placeholder="xyz15@gmail.com" required>
+                <input type="email" name="email-id" id="email" placeholder="xyz15@gmail.com" required>
             </div>
+
             <div class="form-group">
                 <label for="password">Password<span>*</span></label>
+                <i id="eye-icon" class="icon fa-regular fa-eye-slash" onclick="eyeButtonToggle()"></i>
                 <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
+
             <div class="checkbox">
                 <input type="checkbox" name="CheckBox">
                 <span>I accept</span>
                 <a href="">Term & Conditions</a>
             </div>
-            <input type="button" value="Sign-up" class="login-button">
+
+            <input type="button" value="Sign-up" id="signup" class="button" onclick="signUpPage()">
+
             <div class="google-signup">
                 <img src="../Image/devicon_google.png" alt="Google-Image">
                 <a href="">Sign up with google</a>
             </div>
+
             <div class="signup-footer">
                 <span>Have an account?</span>
                 <a href="../index.html">Login?</a>
             </div>
         </form>
     </section>
+
+    <script src="../script.js"></script>
 
 </body>
 
