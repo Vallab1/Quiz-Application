@@ -72,7 +72,6 @@ function signUpPage() {
 }
 // document.querySelector('#signup').addEventListener('click', saveUserData);
 
-
 // Here start the Login Page code
 function loginUserData() {
     const loginEmail = document.getElementById('email-id').value;
@@ -92,11 +91,11 @@ function loginUser(loginEmail, loginPassword) {
     });
     if (userFound) {
         localStorage.setItem("loggedInEmail", loginEmail);
-        //window.location.href = 'User/startquiz.html';
+        window.location.href = 'User/startquiz.html';
     } else {
         alert("Invalid email or password");
     }
-    window.location.href = 'User/startquiz.html';
+    // window.location.href = 'User/startquiz.html';
 
 }
 
@@ -257,6 +256,7 @@ function shuffleQuestions() {
     shuffledData.sort(() => Math.random() - 0.5);
     return shuffledData.slice(0, 10);
 }
+
 function eyeButtonToggle() {
     let eyeButton = document.getElementById("eye-icon");
     if (password.type == "password") {
@@ -269,6 +269,7 @@ function eyeButtonToggle() {
         eyeButton.classList.add("fa-eye-slash");
     }
 }
+
 function navigate() {
     window.location.href = "question.html"
 }
@@ -328,7 +329,6 @@ function showQuestion() {
     updateProgressBar();
 }
 
-
 //Here start the code of option selected....
 function selectAnswer(li, index) {
     const allOptions = document.querySelectorAll(".option");
@@ -341,7 +341,6 @@ function selectAnswer(li, index) {
     // Save the updated data back to local storage
     localStorage.setItem("allQuizData", JSON.stringify(storeData));
 }
-
 
 function nextQuestion() {
     let selectedOption = document.querySelector(".option.selected");
@@ -373,7 +372,6 @@ function nextQuestion() {
     }
 }
 
-
 // coorect
 function calculateTimeTaken(startTime, endTime) {
     const timeDifferent = Math.floor((endTime - startTime) / 1000);
@@ -381,7 +379,6 @@ function calculateTimeTaken(startTime, endTime) {
     const seconds = timeDifferent % 60;
     return `${minutes} : ${seconds}`;
 }
-
 
 // correct
 function calculateScore() {
@@ -393,7 +390,6 @@ function calculateScore() {
     });
     return finalScore;
 }
-
 
 // correct
 function updateUserScore(finalScore) {
@@ -409,7 +405,6 @@ function updateUserScore(finalScore) {
     }
 }
 
-
 function getFlattenedLeaderboard() {
     const users = JSON.parse(localStorage.getItem("userData")) || [];
     let leaderboard = [];
@@ -424,7 +419,6 @@ function getFlattenedLeaderboard() {
     return leaderboard;
 }
 
-
 // correct
 function updatePlayCount() {
     const users = JSON.parse(localStorage.getItem("userData")) || [];
@@ -436,13 +430,11 @@ function updatePlayCount() {
     }
 }
 
-
 //Here start the code of update the progress bar....
 function updateProgressBar() {
     const progressPercentage = ((currentQuestionIndex + 1) / storeData.length) * 100;
     quizProgressBarFill.style.width = progressPercentage + '%';
 }
-
 
 function previousQuestion() {
     if (currentQuestionIndex > 0) {
@@ -451,27 +443,39 @@ function previousQuestion() {
     }
 }
 
-
 //Click the image come to your front popup...//
 let logoutContainer = document.getElementById("logout-container");
 let flag = 0;
 function popUp() {
     if (flag == 0) {
         logoutContainer.style.display = "block";
+        // quizLogoutContainer.style.display = "block";
         flag = 1;
     } else {
         logoutContainer.style.display = "none";
+        // quizLogoutContainer.style.display = "none";
         flag = 0;
     }
 };
 
+let quizLogoutContainer = document.getElementById("quiz-logout-container");
+function popUpShow(){
+    if(flag == 0){
+        quizLogoutContainer.style.display = "block";
+        flag = 1;
+    }else{
+        quizLogoutContainer.style.display = "none";
+        flag = 0;
+    }
+
+};
 
 // Here start the logout function....//
 function logout() {
     let message = "Are you sure you want to logout";
     if (confirm(message) == true) {
         localStorage.removeItem("loggedInEmail");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     };
 };
 
@@ -480,7 +484,7 @@ users.sort((a, b) => b.score - a.score);
 let loggedInEmail = localStorage.getItem("loggedInEmail");
 let loggedInUser = users.find((user) => user.email === loggedInEmail);
 if (loggedInUser) {
-    document.querySelector(".navbar-content li:nth-child(2)").innerText = loggedInUser.fullName;
+    document.querySelector(".navbar-content li:nth-child(1)").innerText = loggedInUser.fullName;
     document.getElementById("my-name").innerText = `Hii, ${loggedInUser.fullName}`;
     document.getElementById("my-email").innerText = loggedInEmail;
 }
@@ -549,7 +553,7 @@ function saveTestInformation(questions, score, timeTaken) {
             testDetails: questions.map(question => {
                 // Ensure options exist and are an array
                 const hasValidOptions = Array.isArray(question.option) && question.option.length > 0;
-                
+
                 // Ensure choosedAnswer is a valid index
                 const isValidChoosedIndex = hasValidOptions &&
                     question.choosedAnswer !== null &&
