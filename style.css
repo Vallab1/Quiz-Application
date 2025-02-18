@@ -5,6 +5,9 @@
     padding: 0px;
     font-family: "Inter", sans-serif;
 }
+body{
+    overflow-x: hidden;
+}
 
 .login-container {
     display: flex;
@@ -50,7 +53,7 @@
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
     height: 76px;
 }
 
@@ -71,14 +74,17 @@ label {
 .form-group input {
     height: 51px;
     border-radius: 8px;
+    overflow: hidden;
     border: 1px solid #8E8E93;
     justify-content: space-between;
     padding: 16px;
+    position: relative;
+    right: 15px;
 }
 
-.form-group {
+/* .form-group {
     position: relative;
-}
+} */
 
 .form-group .icon {
     position: absolute;
@@ -165,11 +171,11 @@ label {
 
     .login-header h1 {
         font-size: 28px;
-        text-align: center;
+        text-align: left;
     }
 
     .login-header p {
-        text-align: center;
+        text-align: left;
         font-size: 14px;
     }
 
