@@ -242,7 +242,7 @@ localStorage.setItem("questionAnswer", JSON.stringify(questions))
 let quizQuestion = document.getElementById("quiz-question");
 let optionList = document.getElementById("option-list");
 let quizProgress = document.getElementById("quiz-progress");
-let quizProgressBarFill = document.getElementById("quiz-progress-bar-fill");//update hoga progress bar
+let quizProgressBarFill = document.getElementById("quiz-progress-bar-fill");
 let nextButton = document.getElementById("next");
 let previousButton = document.getElementById("previous");
 
@@ -341,7 +341,7 @@ function selectAnswer(li, index) {
     // Save the updated data back to local storage
     localStorage.setItem("allQuizData", JSON.stringify(storeData));
 }
-
+// Here show the next question....
 function nextQuestion() {
     let selectedOption = document.querySelector(".option.selected");
     if (!selectedOption) {
@@ -372,7 +372,7 @@ function nextQuestion() {
     }
 }
 
-// coorect
+// Here user solve the question time taken calculate....
 function calculateTimeTaken(startTime, endTime) {
     const timeDifferent = Math.floor((endTime - startTime) / 1000);
     const minutes = Math.floor(timeDifferent / 60);
@@ -380,7 +380,7 @@ function calculateTimeTaken(startTime, endTime) {
     return `${minutes} : ${seconds}`;
 }
 
-// correct
+// Here calculate the user score....
 function calculateScore() {
     let finalScore = 0;
     storeData.forEach((question) => {
@@ -391,7 +391,7 @@ function calculateScore() {
     return finalScore;
 }
 
-// correct
+// Here update the user score....
 function updateUserScore(finalScore) {
     const users = JSON.parse(localStorage.getItem("userData")) || [];
     const loginEmail = localStorage.getItem("loggedInEmail");
@@ -419,7 +419,7 @@ function getFlattenedLeaderboard() {
     return leaderboard;
 }
 
-// correct
+
 function updatePlayCount() {
     const users = JSON.parse(localStorage.getItem("userData")) || [];
     const loggedInEmail = localStorage.getItem("loggedInEmail");
@@ -435,7 +435,7 @@ function updateProgressBar() {
     const progressPercentage = ((currentQuestionIndex + 1) / storeData.length) * 100;
     quizProgressBarFill.style.width = progressPercentage + '%';
 }
-
+// Here show the previous question....
 function previousQuestion() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
@@ -449,12 +449,10 @@ let flag = 0;
 function popUp() {
     if (flag == 0) {
         logoutContainer.style.display = "block";
-        // quizLogoutContainer.style.display = "block";
         flag = 1;
     } else {
         logoutContainer.style.display = "none";
-        // quizLogoutContainer.style.display = "none";
-        flag = 0;
+         flag = 0;
     }
 };
 
@@ -484,7 +482,9 @@ users.sort((a, b) => b.score - a.score);
 let loggedInEmail = localStorage.getItem("loggedInEmail");
 let loggedInUser = users.find((user) => user.email === loggedInEmail);
 if (loggedInUser) {
-    document.querySelector(".navbar-content li:nth-child(1)").innerText = loggedInUser.fullName;
+    document.querySelector(".navbar-content li:nth-child(2)").innerText = loggedInUser.fullName;
+    // document.getElementById("my-name1").innerText = `Hii, ${loggedInUser.fullName}`;
+    // document.getElementById("my-email1").innerText = loggedInEmail;
     document.getElementById("my-name").innerText = `Hii, ${loggedInUser.fullName}`;
     document.getElementById("my-email").innerText = loggedInEmail;
 }
