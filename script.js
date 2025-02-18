@@ -62,15 +62,11 @@ function signUpPage() {
     localStorage.setItem("userBasicData", JSON.stringify(userBasicInformation));
     window.location.href = "../index.html";
 
-    // Confirmation and reset form
-    // alert('Sign-up successful! Your details have been saved.');
-    // window.location.href = '../index.html';
     document.getElementById('full-name').value = '';
     document.getElementById('email-id').value = '';
     document.getElementById('password').value = '';
     document.querySelector('input[name="CheckBox"]').checked = false;
 }
-// document.querySelector('#signup').addEventListener('click', saveUserData);
 
 // Here start the Login Page code
 function loginUserData() {
