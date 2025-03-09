@@ -448,16 +448,16 @@ function popUp() {
         flag = 1;
     } else {
         logoutContainer.style.display = "none";
-         flag = 0;
+        flag = 0;
     }
 };
 
 let quizLogoutContainer = document.getElementById("quiz-logout-container");
-function popUpShow(){
-    if(flag == 0){
+function popUpShow() {
+    if (flag == 0) {
         quizLogoutContainer.style.display = "block";
         flag = 1;
-    }else{
+    } else {
         quizLogoutContainer.style.display = "none";
         flag = 0;
     }

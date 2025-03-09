@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <header id="admin-header">
+        <div id="tech-logo">
+            <i class="fa-solid fa-bars" onclick="popUp()"></i>
+            <img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala">
+        </div>
+        <div id="right-side-information">
+            <ul>
+                <li>Welcome,</li>
+                <li>Admin</li>
+            </ul>
+            <img src="../Image/avtar.jpg" alt="avtar" onclick="popUpLogout()">
+        </div>
+    </header>
+
+    <section id="side-bar">
+        <h2>Dashboard</h2>
+        <ul class="menu">
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a href="adminPage.html">Home</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-user"></i>
+                <a href="users.html">Users</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-question"></i>
+                <a href="">Quizes</a>
+            </li>
+        </ul>
+        <div class="admin-logout-button">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <section id="main-content">
+        <div id="user-test-details">
+            <div id="user-details">
+                <p id="user-name">Vallabh |</p>
+                <p id="user-email">vallabh123@gmail.com</p>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Test No.</th>
+                        <th>test Date</th>
+                        <th>Score</th>
+                        <th>Time spent(minute)</th>
+                        <th>View Test</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>01/03/2025</td>
+                        <td>5</td>
+                        <td>1.00</td>
+                        <td><a href="">View Test</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="logout-container">
+        <p class="my-name">Hii, Vallabh</p>
+        <p class="my-email">abcd123@gmail.com</p>
+        <button onclick="logout()" id="logout-button">Logout</button>
+    </section>
+    <script src="adminScript.js">userTestAttempts()</script>
+
+</body>
+
+</html>
