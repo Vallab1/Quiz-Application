@@ -440,6 +440,7 @@ label {
     cursor: pointer;
     padding: 6px;
     position: relative;
+    bottom: 40px;
     left: 45px;
     font-size: 30px;
 }

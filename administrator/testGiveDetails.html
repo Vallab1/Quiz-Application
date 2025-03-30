@@ -13,8 +13,9 @@
     <header id="admin-header">
         <div id="tech-logo">
             <i class="fa-solid fa-bars" onclick="popUp()"></i>
-            <img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala">
+            <a href="adminPage.html"></a><img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala">
         </div>
+
         <div id="right-side-information">
             <ul>
                 <li>Welcome,</li>
@@ -23,32 +24,83 @@
             <img src="../Image/avtar.jpg" alt="avtar" onclick="popUpLogout()">
         </div>
     </header>
+
     <section id="side-bar">
         <h2>Dashboard</h2>
+
         <ul class="menu">
             <li>
                 <i class="fa-solid fa-house"></i>
-                <a href="adminPage.html">Home</a>
+                <a href="">Home</a>
             </li>
+
             <li>
                 <i class="fa-solid fa-user"></i>
-                <a href="users.html">Users</a>
+                <a href="">Users</a>
             </li>
+
             <li>
                 <i class="fa-solid fa-question"></i>
-                <a href="">Quizes</a>
+                <a href="quizQuestion.html">Quizes</a>
             </li>
         </ul>
+
         <div class="admin-logout-button">
             <button onclick="logout()">Logout</button>
         </div>
     </section>
 
     <section id="main-content">
-        <p id="user-name">Vallabh</p>
-        <p id="user-email ">vallabh123@gmail.com</p>
-        <div id="~">
+        <div id="test-attempt-details">
 
+            <div id="username-details">
+                <p id="user-name">Vallabh | </p>
+                <p id="user-email">vallabh123@gmail.com</p>
+            </div>
+
+            <div class="uper-content-details">
+                <div id="uper-information">
+                    <ul>
+                        <li class="test"><strong>Test:</strong>1</li>
+                        <li class="score"><strong>Score:</strong>30</li>
+                        <li class="test-date"><strong>Test Date:</strong>MM/DD/YY</li>
+                        <li class="time-taken"><strong>Time Taken:</strong>0.35</li>
+                    </ul>
+                </div>
+
+                <div id="question-content">
+                    <div class="question">
+                        <strong>Question 1</strong>
+                        <p>Which of the following is NOT a style.</p>
+                    </div>
+
+                    <div class="option">
+                        <div class="option-list">
+                            <strong>Option 1</strong>
+                            <p class="option-1">Linked</p>
+                        </div>
+
+                        <div class="option-list">
+                            <strong>Option 2</strong>
+                            <p class="option-2">Embedded</p>
+                        </div>
+
+                        <div class="option-list">
+                            <strong>Option 3</strong>
+                            <p class="option-3">inline</p>
+                        </div>
+
+                        <div class="option-list">
+                            <strong>Option 4</strong>
+                            <p class="option-4">orthogonal</p>
+                        </div>
+                    </div>
+
+                    <p class="your-answer">Your answer : a</p>
+                    <p class="correct-answer">Correct answer : a</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -57,7 +109,8 @@
         <p id="my-email">abcd123@gmail.com</p>
         <button onclick="logout()" id="logout-button">Logout</button>
     </section>
-    <script src="adminScript.js"></script>
+    <script src="adminScript.js">testAttemptDetails()
+    </script>
 </body>
 
 </html>

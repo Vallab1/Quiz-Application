@@ -536,51 +536,81 @@ function checkUserData() {
     }
 }
 
-function saveTestInformation(questions, score, timeTaken) {
+// function saveTestInformation(questions, score, timeTaken) {
+//     let userInformation = JSON.parse(localStorage.getItem("userData")) || [];
+//     const loggedInEmail = localStorage.getItem("loggedInEmail");
+//     const userIndex = userInformation.findIndex(user => user.email === loggedInEmail);
+
+//     if (userIndex !== -1) {
+//         const testResult = {
+//             testDate: new Date().toLocaleDateString(),
+//             score: score,
+//             timeTaken: timeTaken,
+//             testDetails: questions.map(question => {
+//                 // Ensure options exist and are an array
+//                 const hasValidOptions = Array.isArray(question.option) && question.option.length > 0;
+
+//                 // Ensure choosedAnswer is a valid index
+//                 const isValidChoosedIndex = hasValidOptions &&
+//                     question.choosedAnswer !== null &&
+//                     question.choosedAnswer >= 0 &&
+//                     question.choosedAnswer < question.option.length;
+
+//                 // Ensure correct answer is a valid index
+//                 const isValidAnswerIndex = hasValidOptions &&
+//                     question.answer >= 0 &&
+//                     question.answer < question.option.length;
+
+//                 return {
+//                     question: question.question || "No question text",
+//                     allOptions: hasValidOptions ? question.option : [],
+//                     choosedAnswer: question.choosedAnswer,
+//                     correctAnswer: question.answer,
+//                     selectedAnswer: isValidChoosedIndex ? question.option[question.choosedAnswer] : null,
+//                     wrongAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer !== question.answer ? question.option[question.answer] : null,
+//                     rightAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer === question.answer ? question.option[question.answer] : null,
+//                 };
+//             }),
+//         };
+
+//         if (!userInformation[userIndex].testInformation) {
+//             userInformation[userIndex].testInformation = [];
+//         }
+
+//         userInformation[userIndex].testInformation.push(testResult);
+//         localStorage.setItem("userData", JSON.stringify(userInformation));
+//     }
+// }
+// console.log("Questions Array:", questions);
+// console.log("Processing Question:", question);
+
+
+function saveTestInformation(questions, score, timeTaken){
     let userInformation = JSON.parse(localStorage.getItem("userData")) || [];
     const loggedInEmail = localStorage.getItem("loggedInEmail");
-    const userIndex = userInformation.findIndex(user => user.email === loggedInEmail);
+    const userIndex = userInformation.findIndex(user =>user.email === loggedInEmail);
 
-    if (userIndex !== -1) {
+    if(userIndex !== -1){
         const testResult = {
             testDate: new Date().toLocaleDateString(),
             score: score,
             timeTaken: timeTaken,
-            testDetails: questions.map(question => {
-                // Ensure options exist and are an array
-                const hasValidOptions = Array.isArray(question.option) && question.option.length > 0;
+            testDetails: questions.map(question => ({
+                question: question.question,
+                allOptions: question.options,
+                choosedAnswer:question.choosedAnswer,
+                correctAnswer: question.answer,
+                selectedAnswer: question.choosedAnswer !== null ? question.options[question.choosedAnswer] : null,
+                wrongAnswer: question.choosedAnswer !== question.answer ? question.options[question.answer] :null,
+                rightAnswer: question.choosedAnswer === question.answer ? question.options[question.answer] : null, 
 
-                // Ensure choosedAnswer is a valid index
-                const isValidChoosedIndex = hasValidOptions &&
-                    question.choosedAnswer !== null &&
-                    question.choosedAnswer >= 0 &&
-                    question.choosedAnswer < question.option.length;
-
-                // Ensure correct answer is a valid index
-                const isValidAnswerIndex = hasValidOptions &&
-                    question.answer >= 0 &&
-                    question.answer < question.option.length;
-
-                return {
-                    question: question.question || "No question text",
-                    allOptions: hasValidOptions ? question.option : [],
-                    choosedAnswer: question.choosedAnswer,
-                    correctAnswer: question.answer,
-                    selectedAnswer: isValidChoosedIndex ? question.option[question.choosedAnswer] : null,
-                    wrongAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer !== question.answer ? question.option[question.answer] : null,
-                    rightAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer === question.answer ? question.option[question.answer] : null,
-                };
-            }),
+            }))
         };
-
-        if (!userInformation[userIndex].testInformation) {
+        if(!userInformation[userIndex].testInformation){
             userInformation[userIndex].testInformation = [];
         }
-
         userInformation[userIndex].testInformation.push(testResult);
-        localStorage.setItem("userData", JSON.stringify(userInformation));
+        localStorage.setItem("userData",JSON.stringify(userInformation));
     }
 }
-// console.log("Questions Array:", questions);
-// console.log("Processing Question:", question);
 

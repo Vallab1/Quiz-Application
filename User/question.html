@@ -11,6 +11,7 @@
 <body>
     <nav id="main-navbar">
         <a href="startquiz.html"><img src="../Image/Vector.png" alt="Vector" id="logo"></a>
+
         <div class="navbar-content">
             <ul>
                 <li>Welcome</li>
@@ -22,6 +23,7 @@
 
     <section class="quiz-question">
         <div class="box-quiz">
+
             <div class="box-quiz-content">
                 <div class="quiz-header">
                     <h1 id="quiz-progress"></h1>
@@ -29,10 +31,12 @@
                         <div id="quiz-progress-bar-fill"></div>
                     </div>
                 </div>
+
                 <div class="quiz-question-container">
                     <h4 id="quiz-question"></h4>
                 </div>
             </div>
+
             <div class="answer">
                 <ol id="option-list"></ol>
             </div>
@@ -52,15 +56,6 @@
 
     <script src="../script.js"></script>
     <script>startQuiz()</script>
-
-    <!--  window.onload = function(){
-           if(localStorage.getItem("loggedInEmail")){
-             window.location.href = "index.html"
-           }
-            // startQuiz();
-           checkUserData();
-        } -->
-
 
 </body>
 

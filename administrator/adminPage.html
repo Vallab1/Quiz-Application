@@ -13,8 +13,9 @@
     <header id="admin-header">
         <div id="tech-logo">
             <i class="fa-solid fa-bars" onclick="popUp()"></i>
-            <img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala">
+            <a href="adminPage.html"><img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala"></a>
         </div>
+
         <div id="right-side-information">
             <ul>
                 <li>Welcome,</li>
@@ -26,31 +27,36 @@
 
     <section id="side-bar">
         <h2>Dashboard</h2>
+
         <ul class="menu">
             <li>
                 <i class="fa-solid fa-house"></i>
                 <a href="adminPage.html">Home</a>
             </li>
+
             <li>
                 <i class="fa-solid fa-user"></i>
                 <a href="users.html">Users</a>
             </li>
+
             <li>
                 <i class="fa-solid fa-question"></i>
-                <a href="">Quizes</a>
+                <a href="quizQuestion.html">Quizes</a>
             </li>
         </ul>
+
         <div class="admin-logout-button">
             <button onclick="logout()">Logout</button>
         </div>
     </section>
-    
+
     <section id="main-content">
         <h1>Welcome to the admin page.</h1>
     </section>
+
     <section id="logout-container">
         <p class="my-name">Hii, Vallabh</p>
-        <p class="my-email">abcd123@gmail.com</p>
+        <p class="my-email">admin123@gmail.com</p>
         <button onclick="logout()" id="logout-button">Logout</button>
     </section>
 

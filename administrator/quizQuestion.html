@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <header id="admin-header">
+        <div id="tech-logo">
+            <i class="fa-solid fa-bars" onclick="popUp()"></i>
+            <a href="adminPage.html"><img src="../Image/Vector.png" alt="techpaathsala" class="techpaathshala"></a>
+        </div>
+
+        <div id="right-side-information">
+            <ul>
+                <li>Welcome,</li>
+                <li>Admin</li>
+            </ul>
+            <img src="../Image/avtar.jpg" alt="avtar" onclick="popUpLogout()">
+        </div>
+    </header>
+
+    <section id="side-bar">
+        <h2>Dashboard</h2>
+
+        <ul class="menu">
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a href="adminPage.html">Home</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-user"></i>
+                <a href="users.html">Users</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-question"></i>
+                <a href="">Quizes</a>
+            </li>
+        </ul>
+
+        <div class="admin-logout-button">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <section id="main-content">
+        <div id="quiz-attempt-details">
+
+            <div id="list-heading">
+                <p>MCQ Question Lists</p>
+            </div>
+
+            <button id="add-new-questoins-button" onclick="popUp_Add_Question()">Add New Questions</button>
+
+            <div class="uper-content-details">
+                <table class="table" id="question-table">
+                    <thead>
+                        <tr>
+                            <th class="sr-no">Sr No</th>
+                            <th id="questions">Questions</th>
+                            <th class="actions">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="sr-no">1</td>
+                            <td class="questions">What is HTML?</td>
+                            <td class="actions"><i class="fa-solid fa-eye" onclick="openView(index)"></i>
+                                <i class="fa-solid fa-pen" onclick="openEdit(index)"></i><i class="fa-solid fa-trash"
+                                    onclick="showDeletePopup(index)"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section id="add-new-questions">
+        <p>Create Question <span><i class="fa-solid fa-xmark" onclick="closePopUp()"></i></span></p>
+
+        <form action="" class="question-details">
+            <div class="question-information">
+                <label for="question">Question<span>*</span></label>
+                <input type="text" id="add-question-input" class="question-input" placeholder="Enter the question."
+                    required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 1<span>*</span></label>
+                <input type="text" id="add-option-1" class="options-a" placeholder="Option A" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 2<span>*</span></label>
+                <input type="text" id="add-option-2" class="options-b" placeholder="Option B" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 3<span>*</span></label>
+                <input type="text" id="add-option-3" class="options-c" placeholder="Option C" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 4<span>*</span></label>
+                <input type="text" id="add-option-4" class="options-d" placeholder="Option D" required>
+            </div>
+
+            <div class="dropdown-container">
+                <label for="option-selected">Correct answer chosed <span>*</span></label>
+                <select name="option" id="add-option-selected" class="option-selected" required>
+                    <option id="option-1" value="option_a">Option-1</option>
+                    <option id="option-2" value="option_b">Option-2</option>
+                    <option id="option-3" value="option_c">Option-3</option>
+                    <option id="option-4" value="option_d">Option-4</option>
+                </select>
+            </div>
+
+        </form>
+
+        <button onclick="add_Question_Answer(event)" class="buttons" id="add-button" type="submit">Submit</button>
+    </section>
+
+    <section id="view-questions">
+        <p>Question Details<span><i class="fa-solid fa-xmark" onclick="closeView()"></i></span></p>
+
+        <form action="" class="question-details">
+            <div class="question-information">
+                <label for="question">Question<span>*</span></label>
+                <input type="text" id="view-question-input" class="question-input" placeholder="Enter the question."
+                    required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 1<span>*</span></label>
+                <input type="text" id="view-option-1" class="options-a" placeholder="Option A" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 2<span>*</span></label>
+                <input type="text" id="view-option-2" class="options-b" placeholder="Option B" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 3<span>*</span></label>
+                <input type="text" id="view-option-3" class="options-c" placeholder="Option C" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 4<span>*</span></label>
+                <input type="text" id="view-option-4" class="options-d" placeholder="Option D" required>
+            </div>
+
+            <div class="dropdown-container">
+                <label for="option-selected">Correct answer chosed <span>*</span></label>
+                <input type="text" id="view-option-selected" class="option-selected" required>
+
+            </div>
+        </form>
+    </section>
+
+    <section id="edit-questions">
+        <p>Edit Question<span><i class="fa-solid fa-xmark" onclick="closeEdit()"></i></span></p>
+
+        <form action="" class="question-details">
+            <div class="question-information">
+                <label for="question">Question<span>*</span></label>
+                <input type="text" id="edit-question-input" class="question-input" placeholder="Enter the question."
+                    required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 1<span>*</span></label>
+                <input type="text" id="edit-option-1" class="options-a" placeholder="Option A" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 2<span>*</span></label>
+                <input type="text" id="edit-option-2" class="options-b" placeholder="Option B" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 3<span>*</span></label>
+                <input type="text" id="edit-option-3" class="options-c" placeholder="Option C" required>
+            </div>
+
+            <div class="option-lists">
+                <label for="Option">Option 4<span>*</span></label>
+                <input type="text" id="edit-option-4" class="options-d" placeholder="Option D" required>
+            </div>
+
+            <div class="dropdown-container">
+                <label for="option-selected">Correct answer chosed <span>*</span></label>
+                <select name="option" id="edit-option-selected" class="option-selected" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option id="editOption-1" value="option_a">Option A</option>
+                    <option id="editOption-2" value="option_b">Option B</option>
+                    <option id="editOption-3" value="option_c">Option C</option>
+                    <option id="editOption-4" value="option_d">Option D</option>
+                </select>
+            </div>
+
+        </form>
+        <button class="buttons" onclick="saveEdit()">Submit</button>
+    </section>
+
+    <section id="delete-content">
+        <div id="delete">
+            <i class="fa-solid fa-exclamation"></i>
+            <p class="bold">Are you sure?</p>
+            <p>Are you sure you want to delete this question?</p>
+
+            <div class="delete-cancel-buttons">
+                <button id="delete-button" onclick="confirmDelete()">Delete</button>
+                <button id="cancel-button" onclick="closeDeletePopup()">Cancel</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="logout-container">
+        <p id="my-name">Hii, Vallabh</p>
+        <p id="my-email">abcd123@gmail.com</p>
+        <button onclick="logout()" id="logout-button">Logout</button>
+    </section>
+    <script src="adminScript.js"></script>
+
+</body>
+
+</html>
