@@ -4,6 +4,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Inter", sans-serif;
+overflow-x: hidden;
 }
 
 .login-container {
@@ -364,6 +365,7 @@ td {
 /* Here start the test given details page */
 #test-attempt-details {
     width: 1030px;
+    height: 2400px;
     box-shadow: 0px 0px 8px #282829;
     left: 250px;
     top: 64px;
@@ -404,7 +406,7 @@ td {
     padding: 5px;
 }
 
-#question-content {
+/* #question-content {
     box-shadow: 0px 0px 8px #282829;
     width: 960px;
     height: 250px;
@@ -415,11 +417,11 @@ td {
     flex-direction: column;
     gap: 20px;
     border-radius: 10px;
-}
+} */
 
 .question {
     display: flex;
-    gap: 45px;
+    gap: 69px;
     position: absolute;
     left: 40px;
     align-items: center;
@@ -438,20 +440,19 @@ td {
 #question-content .your-answer {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 54px;
     position: relative;
     left: 25px;
-    top: 10px;
+    top: 20px;
     color: red;
 }
 
 #question-content .correct-answer {
     display: flex;
     flex-direction: row;
-    gap: 17px;
+    gap: 52px;
     position: relative;
     left: 5px;
-    top: -30px;
     color: green;
 }
 

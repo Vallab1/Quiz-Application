@@ -205,21 +205,10 @@ function testAttemptDetails() {
 
     questionContainer.innerHTML += questionHTML;
   });
+  let questionCount = attempt.testDetails.length;
+  questionContainer.style.height = `${questionCount * 50 + 100}px`;
 }
 document.addEventListener("DOMContentLoaded", testAttemptDetails);
-function adjustHeight() {
-  let container = document.getElementById("test-attempt-details");
-  let questionContent = document.getElementById("question-content");
-  
-  if (container && questionContent) {
-      container.style.height = questionContent.scrollHeight + "px";
-  }
-}
-
-// Call function after content is loaded
-document.addEventListener("DOMContentLoaded", adjustHeight);
-window.addEventListener("resize", adjustHeight);
-
 
 function display_Quiz_Question() {
   let storedQuestions = JSON.parse(localStorage.getItem("questionAnswer")) || [];
@@ -234,9 +223,9 @@ function display_Quiz_Question() {
         <td class="sr-no">${index + 1}</td>
         <td class="questions">${quiz.question}</td>
         <td class="actions">
-          <i class="fa-solid fa-eye" onclick="openView(${index})"></i>
-          <i class="fa-solid fa-pen" onclick="openEdit(${index})"></i>
-          <i class="fa-solid fa-trash" onclick="showDeletePopup(${index})"></i>
+          <i class="fa-solid fa-eye" onclick="openView(${index})"title="View"></i>
+          <i class="fa-solid fa-pen" onclick="openEdit(${index})"title="Edit"></i>
+          <i class="fa-solid fa-trash" onclick="showDeletePopup(${index})"title="Delete"></i>
         </td>
       </tr>`;
 
