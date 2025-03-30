@@ -144,7 +144,6 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* right: 0px; */
     border-bottom: 1px solid grey;
     position: fixed;
     top: 0;
@@ -181,7 +180,6 @@ label {
     list-style: none;
     font-weight: bold;
     font-size: 18px;
-
 }
 
 #right-side-information img {
@@ -200,7 +198,6 @@ label {
     top: 58px;
     z-index: 1;
     overflow-x: hidden;
-
 }
 
 #side-bar .menu {
@@ -219,7 +216,6 @@ label {
     border-radius: 3px;
     display: block;
     transition: .3s;
-
 }
 
 #side-bar h2 {
@@ -230,7 +226,6 @@ label {
 .menu li a {
     text-decoration: none;
     color: black;
-
 }
 
 .menu i {
@@ -264,7 +259,6 @@ label {
     position: absolute;
     left: 600px;
     bottom: 300px;
-
 }
 
 #logout-container {
@@ -284,7 +278,6 @@ label {
 #logout-container p {
     text-align: center;
     font-size: 20px;
-
 }
 
 #logout-button {
@@ -340,7 +333,6 @@ td {
     font-weight: bold;
     box-shadow: 0px 1px #282829;
     margin-left: 17.5px;
-
 }
 
 #user-test-details th,
@@ -381,10 +373,7 @@ td {
 
 #test-attempt-details .uper-content-details {
     margin: 15px;
-    /* border: 1px solid grey; */
     width: 1000px;
-    /* height: 500px; */
-
 }
 
 #username-details {
@@ -408,7 +397,6 @@ td {
     list-style: none;
     box-shadow: 0px 1px grey;
     padding: 0px;
-
 }
 
 #uper-information ul li {
@@ -433,10 +421,8 @@ td {
     display: flex;
     gap: 45px;
     position: absolute;
-    /* top: 10px; */
     left: 40px;
     align-items: center;
-    /* line-height: 5px; */
 }
 
 .option-list {
@@ -457,7 +443,6 @@ td {
     left: 25px;
     top: 10px;
     color: red;
-
 }
 
 #question-content .correct-answer {
@@ -502,7 +487,6 @@ td {
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
-
 }
 
 #question-table th,
@@ -535,7 +519,6 @@ td {
 }
 
 tbody td i {
-    /* color: red; */
     margin: 5px;
     cursor: pointer;
 }
@@ -562,7 +545,6 @@ tbody i.fa-solid.fa-trash {
 }
 
 /* Here start the add question in quiz. */
-
 #add-new-questions {
     position: absolute;
     display: flex;
@@ -659,12 +641,6 @@ tbody i.fa-solid.fa-trash {
     overflow: hidden;
 }
 
-/* #add-question {
-    position: absolute;
-    bottom: 20px;
-    left: 50px;
-} */
-
 .dropdown-container {
     display: flex;
     flex-direction: column;
@@ -689,7 +665,6 @@ tbody i.fa-solid.fa-trash {
     width: 633px;
     height: 30px;
     font-size: 16px;
-    /* color: grey; */
 }
 
 .buttons {
@@ -752,8 +727,6 @@ tbody i.fa-solid.fa-trash {
     position: absolute;
     top: 170px;
     left: 90px;
-    /* padding: 5px; */
-
 }
 
 #delete-button {
@@ -769,9 +742,7 @@ tbody i.fa-solid.fa-trash {
 #cancel-button {
     cursor: pointer;
     color: white;
-    background-color:
-        /* #16dd04*/
-        red;
+    background-color: red;
     border: none;
     border-radius: 2px;
     width: 60px;
@@ -824,7 +795,6 @@ tbody i.fa-solid.fa-trash {
 #view-questions p span i:hover {
     background-color: red;
     color: white;
-
 }
 
 /* Here start the Edit question*/
@@ -861,7 +831,8 @@ tbody i.fa-solid.fa-trash {
     padding: 2px;
     text-align: center;
 }
-#edit-questions p span i:hover{
+
+#edit-questions p span i:hover {
     background-color: red;
     color: white;
 }
