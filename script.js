@@ -72,13 +72,13 @@ function signUpPage() {
 function loginUserData() {
     const loginEmail = document.getElementById('email-id').value;
     const loginPassword = document.getElementById('password').value;
-    // event.preventDefault();
     if (!loginEmail || !loginPassword) {
         alert('Please fill in all required fields.');
         return;
     }
     loginUser(loginEmail, loginPassword);
 }
+
 // Match the data for login ...//
 function loginUser(loginEmail, loginPassword) {
     const users = JSON.parse(localStorage.getItem("userBasicData")) || [];
@@ -91,8 +91,6 @@ function loginUser(loginEmail, loginPassword) {
     } else {
         alert("Invalid email or password");
     }
-    // window.location.href = 'User/startquiz.html';
-
 }
 
 // Here start the Array Question...
@@ -334,9 +332,9 @@ function selectAnswer(li, index) {
     li.classList.add("selected");
     // Update the selected answer in storeData
     storeData[currentQuestionIndex].choosedAnswer = index;
-    // Save the updated data back to local storage
     localStorage.setItem("allQuizData", JSON.stringify(storeData));
 }
+
 // Here show the next question....
 function nextQuestion() {
     let selectedOption = document.querySelector(".option.selected");
@@ -361,7 +359,6 @@ function nextQuestion() {
             alert(`Quiz finished! Your score is ${finalScore} out of 100.Time taken: ${timeTaken}`);
             updateUserScore(finalScore, timeTaken);
             saveTestInformation(storeData, finalScore, timeTaken);
-            // resetQuizData();
             nextButton.disabled = true;
             window.location.href = "leaderboard.html";
         }
@@ -415,7 +412,6 @@ function getFlattenedLeaderboard() {
     return leaderboard;
 }
 
-
 function updatePlayCount() {
     const users = JSON.parse(localStorage.getItem("userData")) || [];
     const loggedInEmail = localStorage.getItem("loggedInEmail");
@@ -431,6 +427,7 @@ function updateProgressBar() {
     const progressPercentage = ((currentQuestionIndex + 1) / storeData.length) * 100;
     quizProgressBarFill.style.width = progressPercentage + '%';
 }
+
 // Here show the previous question....
 function previousQuestion() {
     if (currentQuestionIndex > 0) {
@@ -461,7 +458,6 @@ function popUpShow() {
         quizLogoutContainer.style.display = "none";
         flag = 0;
     }
-
 };
 
 // Here start the logout function....//
@@ -535,55 +531,6 @@ function checkUserData() {
         console.log("No user data found.");
     }
 }
-
-// function saveTestInformation(questions, score, timeTaken) {
-//     let userInformation = JSON.parse(localStorage.getItem("userData")) || [];
-//     const loggedInEmail = localStorage.getItem("loggedInEmail");
-//     const userIndex = userInformation.findIndex(user => user.email === loggedInEmail);
-
-//     if (userIndex !== -1) {
-//         const testResult = {
-//             testDate: new Date().toLocaleDateString(),
-//             score: score,
-//             timeTaken: timeTaken,
-//             testDetails: questions.map(question => {
-//                 // Ensure options exist and are an array
-//                 const hasValidOptions = Array.isArray(question.option) && question.option.length > 0;
-
-//                 // Ensure choosedAnswer is a valid index
-//                 const isValidChoosedIndex = hasValidOptions &&
-//                     question.choosedAnswer !== null &&
-//                     question.choosedAnswer >= 0 &&
-//                     question.choosedAnswer < question.option.length;
-
-//                 // Ensure correct answer is a valid index
-//                 const isValidAnswerIndex = hasValidOptions &&
-//                     question.answer >= 0 &&
-//                     question.answer < question.option.length;
-
-//                 return {
-//                     question: question.question || "No question text",
-//                     allOptions: hasValidOptions ? question.option : [],
-//                     choosedAnswer: question.choosedAnswer,
-//                     correctAnswer: question.answer,
-//                     selectedAnswer: isValidChoosedIndex ? question.option[question.choosedAnswer] : null,
-//                     wrongAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer !== question.answer ? question.option[question.answer] : null,
-//                     rightAnswer: isValidChoosedIndex && isValidAnswerIndex && question.choosedAnswer === question.answer ? question.option[question.answer] : null,
-//                 };
-//             }),
-//         };
-
-//         if (!userInformation[userIndex].testInformation) {
-//             userInformation[userIndex].testInformation = [];
-//         }
-
-//         userInformation[userIndex].testInformation.push(testResult);
-//         localStorage.setItem("userData", JSON.stringify(userInformation));
-//     }
-// }
-// console.log("Questions Array:", questions);
-// console.log("Processing Question:", question);
-
 
 function saveTestInformation(questions, score, timeTaken){
     let userInformation = JSON.parse(localStorage.getItem("userData")) || [];
