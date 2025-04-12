@@ -87,7 +87,7 @@ function loginUser(loginEmail, loginPassword) {
     });
     if (userFound) {
         localStorage.setItem("loggedInEmail", loginEmail);
-        window.location.href = 'User/startquiz.html';
+        window.location.href = 'User/startQuiz.html';
     } else {
         alert("Invalid email or password");
     }
