@@ -360,7 +360,7 @@ function nextQuestion() {
             updateUserScore(finalScore, timeTaken);
             saveTestInformation(storeData, finalScore, timeTaken);
             nextButton.disabled = true;
-            window.location.href = "leaderboard.html";
+            window.location.href = "leaderBoard.html";
         }
     }
 }
